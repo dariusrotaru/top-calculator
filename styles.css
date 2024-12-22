@@ -75,7 +75,7 @@ button.digit {
     color: white;
 }
 
-button.operator {
+button.operator, button.signChange {
     background-color: #ff9500;
     color: white;
 }

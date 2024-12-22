@@ -9,6 +9,7 @@ const operatorButtons = document.querySelectorAll('.operator');
 const clearButton = document.querySelector('.clear');
 const equalsButton = document.querySelector('.equals');
 const deleteButtons = document.querySelector('.delete');
+const signChangeButton = document.querySelector('.signChange');
 
 
 function add(a, b){
@@ -88,4 +89,16 @@ clearButton.addEventListener('click', () => {
     operator = null;
     secondNumber = null;
     display.textContent = '0';
+})
+
+//sign change button
+
+signChangeButton.addEventListener('click', () => {
+    if (display.textContent !== '0') {
+        if (display.textContent.startsWith('-')) {
+            display.textContent = display.textContent.slice(1);
+        } else {
+            display.textContent = '-' + display.textContent;
+        }
+    }
 })
