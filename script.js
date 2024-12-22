@@ -25,7 +25,7 @@ function multiply(a, b){
 
 function divide(a, b){
     if (b === 0){
-        return "Error: Division by zero";
+        return "Cannot divide by 0";
     }
     return a / b;
 }
@@ -34,18 +34,27 @@ function divide(a, b){
 
 
 function operateF(operator, a, b){
+    let result;
     switch (operator) {
         case '+':
-            return add(a, b);
+            result = add(a, b);
+            break;
         case '-':
-            return subtract(a,b);
+            result = subtract(a,b);
+            break;
         case '*':
-            return multiply(a,b);
+            result = multiply(a,b);
+            break;
         case '/':
-            return divide(a,b);
+            result = divide(a,b);
+            break;
         default:
             return 'error';
     }
+    if(typeof result === 'string') {
+        return result;
+    }
+    return Math.round(result * 10000000000) / 10000000000;
 }
 
 //adding numbers to display
